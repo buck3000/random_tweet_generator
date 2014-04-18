@@ -36,15 +36,14 @@ module TwitterClient
   end
 
   def self.get_last_200_tweets(user)
-    @client.user_timeline(user, count:200)
+    @client.user_timeline(user, count:200, :include_rts => false)
   end
 
   def self.get_single_tweet(id)
     @client.status(id)
   end
-
-
 end
+
 
 #Driver / Testing Code:
 # TwitterClient.create_client
